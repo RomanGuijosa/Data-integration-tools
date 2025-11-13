@@ -1,3 +1,24 @@
+"""
+remote_sas7bdat_gunzip.py
+--------------------------
+Script para conectarse a un servidor remoto mediante SSH, ubicar todos los archivos
+SAS comprimidos (.sas7bdat.gz) en un directorio específico y descomprimirlos en el
+mismo lugar, sin eliminar los archivos .gz originales. Los archivos ya descomprimidos
+se omiten automáticamente.
+
+Autor: Roman Guijosa
+Versión: 1.0
+Fecha: 2025-11-13
+
+Requisitos:
+    - Python 3.8+
+    - Paramiko (pip install paramiko)
+
+Notas:
+    - El script ejecuta el comando 'gzip -cd' de forma remota mediante SSH.
+    - Mantiene los archivos .gz originales sin borrarlos.
+    - No sobrescribe archivos .sas7bdat que ya existan.
+"""
 import paramiko
 
 # DATOS PARA CONEXION Y RUTA
